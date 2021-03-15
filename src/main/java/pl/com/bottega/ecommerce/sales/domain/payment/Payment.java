@@ -16,10 +16,10 @@ import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.ClientData;
 import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.Id;
 import pl.com.bottega.ecommerce.sharedkernel.Money;
 
-public class Payment implements FactoryPayment {
+public class Payment {
 
     private ClientData clientData;
-
+    private  FactoryPayment factoryPayment;
     private Money amount;
 
     private Id aggregateId;
@@ -33,6 +33,6 @@ public class Payment implements FactoryPayment {
     public Payment rollBack() {
         Id id = Id.generate();
 
-        return new Payment(id, clientData, amount.multiplyBy(-1));
+        return factoryPayment.newPayment(id, clientData, amount.multiplyBy(-1));
     }
 }
