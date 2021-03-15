@@ -16,7 +16,7 @@ import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.ClientData;
 import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.Id;
 import pl.com.bottega.ecommerce.sharedkernel.Money;
 
-public class Payment {
+public class Payment implements FactoryPayment {
 
     private ClientData clientData;
 
