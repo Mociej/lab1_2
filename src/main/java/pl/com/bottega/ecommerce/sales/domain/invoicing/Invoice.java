@@ -32,7 +32,7 @@ public class Invoice {
 
     private Id id;
 
-    private InvoiceLineFactory invoiceLineFactory;
+    public InvoiceLineFactory invoiceLineFactory;
 
     Invoice(Id invoiceId, ClientData client) {
         this.id = invoiceId;
@@ -41,6 +41,9 @@ public class Invoice {
 
         this.net = Money.ZERO;
         this.gros = Money.ZERO;
+    }
+    public static Invoice invoiceInit(Id invoiceId, ClientData client){
+        return new Invoice(invoiceId,client);
     }
 
     public void addItem(InvoiceLine item) {

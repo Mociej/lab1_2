@@ -19,7 +19,7 @@ import pl.com.bottega.ecommerce.sharedkernel.Money;
 public class Payment {
 
     private ClientData clientData;
-    private  FactoryPayment factoryPayment;
+    public  FactoryPayment factoryPayment;
     private Money amount;
 
     private Id aggregateId;
